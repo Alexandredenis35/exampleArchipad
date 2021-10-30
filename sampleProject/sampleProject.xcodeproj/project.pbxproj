@@ -21,6 +21,11 @@
 		5242AFE4272CA772003D9C51 /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5242AFE2272CA772003D9C51 /* ProjectCollectionViewCell.xib */; };
 		5242AFE7272CA794003D9C51 /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFE5272CA794003D9C51 /* ProjectTableViewCell.swift */; };
 		5242AFE8272CA794003D9C51 /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5242AFE6272CA794003D9C51 /* ProjectTableViewCell.xib */; };
+		5242AFEA272D2325003D9C51 /* ProjectHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFE9272D2325003D9C51 /* ProjectHeaderTableViewCell.swift */; };
+		5242AFEC272D233A003D9C51 /* ProjectHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5242AFEB272D233A003D9C51 /* ProjectHeaderTableViewCell.xib */; };
+		5242AFEF272DA229003D9C51 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFEE272DA229003D9C51 /* JSONHelper.swift */; };
+		5242AFF1272DA261003D9C51 /* projectdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242AFF0272DA261003D9C51 /* projectdata.json */; };
+		5242AFF3272DA3EF003D9C51 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +64,11 @@
 		5242AFE2272CA772003D9C51 /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
 		5242AFE5272CA794003D9C51 /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
 		5242AFE6272CA794003D9C51 /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
+		5242AFE9272D2325003D9C51 /* ProjectHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		5242AFEB272D233A003D9C51 /* ProjectHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		5242AFEE272DA229003D9C51 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
+		5242AFF0272DA261003D9C51 /* projectdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = projectdata.json; path = ../../../../../Downloads/projectdata.json; sourceTree = "<group>"; };
+		5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +119,8 @@
 		5242AFAA272CA703003D9C51 /* sampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				5242AFF0272DA261003D9C51 /* projectdata.json */,
+				5242AFED272DA214003D9C51 /* Helper */,
 				5242AFE0272CA75A003D9C51 /* Views */,
 				5242AFDE272CA74D003D9C51 /* Models */,
 				5242AFAB272CA703003D9C51 /* AppDelegate.swift */,
@@ -143,6 +155,7 @@
 		5242AFDE272CA74D003D9C51 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -154,8 +167,18 @@
 				5242AFE2272CA772003D9C51 /* ProjectCollectionViewCell.xib */,
 				5242AFE5272CA794003D9C51 /* ProjectTableViewCell.swift */,
 				5242AFE6272CA794003D9C51 /* ProjectTableViewCell.xib */,
+				5242AFE9272D2325003D9C51 /* ProjectHeaderTableViewCell.swift */,
+				5242AFEB272D233A003D9C51 /* ProjectHeaderTableViewCell.xib */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		5242AFED272DA214003D9C51 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				5242AFEE272DA229003D9C51 /* JSONHelper.swift */,
+			);
+			path = Helper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +287,8 @@
 			files = (
 				5242AFE4272CA772003D9C51 /* ProjectCollectionViewCell.xib in Resources */,
 				5242AFBB272CA709003D9C51 /* LaunchScreen.storyboard in Resources */,
+				5242AFEC272D233A003D9C51 /* ProjectHeaderTableViewCell.xib in Resources */,
+				5242AFF1272DA261003D9C51 /* projectdata.json in Resources */,
 				5242AFE8272CA794003D9C51 /* ProjectTableViewCell.xib in Resources */,
 				5242AFB8272CA709003D9C51 /* Assets.xcassets in Resources */,
 				5242AFB3272CA703003D9C51 /* Main.storyboard in Resources */,
@@ -292,9 +317,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				5242AFE3272CA772003D9C51 /* ProjectCollectionViewCell.swift in Sources */,
+				5242AFEA272D2325003D9C51 /* ProjectHeaderTableViewCell.swift in Sources */,
+				5242AFF3272DA3EF003D9C51 /* ProjectModel.swift in Sources */,
 				5242AFE7272CA794003D9C51 /* ProjectTableViewCell.swift in Sources */,
 				5242AFB0272CA703003D9C51 /* ViewController.swift in Sources */,
 				5242AFAC272CA703003D9C51 /* AppDelegate.swift in Sources */,
+				5242AFEF272DA229003D9C51 /* JSONHelper.swift in Sources */,
 				5242AFAE272CA703003D9C51 /* SceneDelegate.swift in Sources */,
 				5242AFB6272CA703003D9C51 /* sampleProject.xcdatamodeld in Sources */,
 			);

@@ -19,17 +19,33 @@
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnX-YK-zZG">
                         <rect key="frame" x="0.0" y="0.0" width="131" height="98"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PWz-Ar-ZiC">
-                                <rect key="frame" x="44.5" y="38.5" width="42" height="21"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="aGQ-KT-EhN">
+                                <rect key="frame" x="0.0" y="0.5" width="131" height="19"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" translatesAutoresizingMaskIntoConstraints="NO" id="PWz-Ar-ZiC">
+                                <rect key="frame" x="44.5" y="0.0" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b7H-h0-Rgu">
+                                <rect key="frame" x="0.0" y="31" width="131" height="3"/>
+                                <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="3" id="GOZ-Q2-6qQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemGreenColor"/>
                         <constraints>
+                            <constraint firstItem="aGQ-KT-EhN" firstAttribute="centerX" secondItem="qnX-YK-zZG" secondAttribute="centerX" id="2ti-IP-Hae"/>
                             <constraint firstItem="PWz-Ar-ZiC" firstAttribute="centerX" secondItem="qnX-YK-zZG" secondAttribute="centerX" id="8aE-92-ezs"/>
-                            <constraint firstItem="PWz-Ar-ZiC" firstAttribute="centerY" secondItem="qnX-YK-zZG" secondAttribute="centerY" id="LaW-Uo-fLq"/>
+                            <constraint firstItem="b7H-h0-Rgu" firstAttribute="top" secondItem="PWz-Ar-ZiC" secondAttribute="bottom" constant="10" id="DII-rf-WZ0"/>
+                            <constraint firstItem="b7H-h0-Rgu" firstAttribute="centerX" secondItem="qnX-YK-zZG" secondAttribute="centerX" id="HRO-h8-std"/>
+                            <constraint firstItem="aGQ-KT-EhN" firstAttribute="top" secondItem="qnX-YK-zZG" secondAttribute="top" id="JL5-8d-Bkv"/>
+                            <constraint firstItem="PWz-Ar-ZiC" firstAttribute="top" secondItem="qnX-YK-zZG" secondAttribute="top" id="Q5O-Ce-HXg"/>
+                            <constraint firstItem="aGQ-KT-EhN" firstAttribute="leading" secondItem="qnX-YK-zZG" secondAttribute="leading" id="QZJ-mo-k9l"/>
+                            <constraint firstItem="b7H-h0-Rgu" firstAttribute="leading" secondItem="qnX-YK-zZG" secondAttribute="leading" id="gIq-Ev-tIf"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -45,8 +61,12 @@
         </collectionViewCell>
     </objects>
     <resources>
+        <image name="square.and.arrow.up.circle.fill" catalog="system" width="128" height="121"/>
         <systemColor name="systemGreenColor">
             <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.17647058823529413" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

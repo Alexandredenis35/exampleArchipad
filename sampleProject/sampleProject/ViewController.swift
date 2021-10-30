@@ -13,12 +13,23 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        if let data = JSONHelper.readLocalFile(forName: "projectdata") {
+            JSONHelper.parse(jsonData: data)
+
+        }
+        
+       
         setupTableView()
     }
 
     private func setupTableView() {
         // Register the xib for tableview cell
+        
+        let headerCellNib = UINib(nibName: "ProjectHeaderTableViewCell", bundle: nil)
         let cellNib = UINib(nibName: "ProjectTableViewCell", bundle: nil)
+        self.projectTableView.register(cellNib, forCellReuseIdentifier: "ProjectTableViewCell")
+
+        self.projectTableView.register(headerCellNib, forHeaderFooterViewReuseIdentifier: "ProjectHeaderTableViewCell")
         self.projectTableView.register(cellNib, forCellReuseIdentifier: "ProjectTableViewCell")
         projectTableView.delegate = self
         projectTableView.dataSource = self
@@ -40,6 +51,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
     }
         return cell
+    }
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ProjectHeaderTableViewCell") as? ProjectHeaderTableViewCell else {
+            return UIView()
+        }
+    //headerView.sectionTitleLabel.text = "TableView Heder \(section)"
+    return headerView
     }
     
 }

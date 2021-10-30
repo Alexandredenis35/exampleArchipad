@@ -7,9 +7,11 @@
 
 import Foundation
 struct ProjectModel: Decodable {
-  let projects: [Project]
+  let result: [Project]
 }
 
 struct Project: Decodable {
+  let id: String
   let name: String
+  let lastModificationDate: TimeInterval
 }

@@ -29,7 +29,7 @@ enum JSONHelper {
             let decodedData: ProjectModel = try JSONDecoder().decode(ProjectModel.self,
                                                        from: jsonData)
             
-            print("JSONDATA =>")
+            print("JSONDATA =>\(decodedData.result)")
 
         } catch {
             print("decode \(error)")

@@ -29,7 +29,14 @@ class ViewController: UIViewController {
         projectTableView.delegate = self
         projectTableView.dataSource = self
     }
+    
+    private func showAlertProject() {
+        let alert = UIAlertController(title: "Détails du projet", message: "Voici le détails du projet", preferredStyle: .alert)
 
+        alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -46,7 +53,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
     }
         let projects = viewModel.tableViewCells[indexPath.section].collectionViewCells
-        cell.setup(projects: projects)
+        cell.setup(delegate: self, projects: projects)
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -58,5 +65,13 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.setupHeader(title: title)
     return headerView
     }
+    
+}
+
+extension ViewController: ProjectCollectionViewCellDelegate {
+    func showAlert() {
+        showAlertProject()
+    }
+    
     
 }

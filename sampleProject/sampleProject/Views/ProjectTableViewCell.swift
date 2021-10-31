@@ -13,7 +13,7 @@ class ProjectTableViewCell: UITableViewCell {
     
     private var viewModel: ProjectViewModel = ProjectViewModel()
     private var collectionViewCells: [Project] = []
-    
+    weak var cellDelegate: ProjectCollectionViewCellDelegate?
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -36,7 +36,9 @@ class ProjectTableViewCell: UITableViewCell {
        
     }
     
-    public func setup(projects: [Project]) {
+    public func setup(delegate: ProjectCollectionViewCellDelegate?,
+                      projects: [Project]) {
+        cellDelegate = delegate
         collectionViewCells = projects
         self.collectionView.reloadData()
     }
@@ -58,8 +60,9 @@ extension ProjectTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCollectionViewCell", for: indexPath) as? ProjectCollectionViewCell else { return UICollectionViewCell() }
         let imageName = collectionViewCells[indexPath.row].id
         let title = collectionViewCells[indexPath.row].name
+        let timestamp = collectionViewCells[indexPath.row].lastModificationDate
         let image: UIImage? = UIImage(named: imageName)
-        cell.setupCell(image: image, title: title)
+        cell.setupCell(delegate: cellDelegate, image: image, title: title, timestamp: timestamp)
         return cell
     }
     

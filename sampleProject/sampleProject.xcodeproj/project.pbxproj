@@ -26,6 +26,8 @@
 		5242AFEF272DA229003D9C51 /* JSONHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFEE272DA229003D9C51 /* JSONHelper.swift */; };
 		5242AFF1272DA261003D9C51 /* projectdata.json in Resources */ = {isa = PBXBuildFile; fileRef = 5242AFF0272DA261003D9C51 /* projectdata.json */; };
 		5242AFF3272DA3EF003D9C51 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */; };
+		5242AFF5272E8A5A003D9C51 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF4272E8A5A003D9C51 /* ProjectViewModel.swift */; };
+		5242AFF8272E8CD5003D9C51 /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF7272E8CD5003D9C51 /* TableViewCellModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		5242AFEE272DA229003D9C51 /* JSONHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONHelper.swift; sourceTree = "<group>"; };
 		5242AFF0272DA261003D9C51 /* projectdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = projectdata.json; path = ../../../../../Downloads/projectdata.json; sourceTree = "<group>"; };
 		5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
+		5242AFF4272E8A5A003D9C51 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
+		5242AFF7272E8CD5003D9C51 /* TableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		5242AFAA272CA703003D9C51 /* sampleProject */ = {
 			isa = PBXGroup;
 			children = (
+				5242AFF6272E8A63003D9C51 /* ViewModel */,
 				5242AFF0272DA261003D9C51 /* projectdata.json */,
 				5242AFED272DA214003D9C51 /* Helper */,
 				5242AFE0272CA75A003D9C51 /* Views */,
@@ -156,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */,
+				5242AFF7272E8CD5003D9C51 /* TableViewCellModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -179,6 +185,14 @@
 				5242AFEE272DA229003D9C51 /* JSONHelper.swift */,
 			);
 			path = Helper;
+			sourceTree = "<group>";
+		};
+		5242AFF6272E8A63003D9C51 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				5242AFF4272E8A5A003D9C51 /* ProjectViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -320,9 +334,11 @@
 				5242AFEA272D2325003D9C51 /* ProjectHeaderTableViewCell.swift in Sources */,
 				5242AFF3272DA3EF003D9C51 /* ProjectModel.swift in Sources */,
 				5242AFE7272CA794003D9C51 /* ProjectTableViewCell.swift in Sources */,
+				5242AFF5272E8A5A003D9C51 /* ProjectViewModel.swift in Sources */,
 				5242AFB0272CA703003D9C51 /* ViewController.swift in Sources */,
 				5242AFAC272CA703003D9C51 /* AppDelegate.swift in Sources */,
 				5242AFEF272DA229003D9C51 /* JSONHelper.swift in Sources */,
+				5242AFF8272E8CD5003D9C51 /* TableViewCellModel.swift in Sources */,
 				5242AFAE272CA703003D9C51 /* SceneDelegate.swift in Sources */,
 				5242AFB6272CA703003D9C51 /* sampleProject.xcdatamodeld in Sources */,
 			);

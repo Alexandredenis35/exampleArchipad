@@ -10,33 +10,36 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ProjectCollectionViewCell" id="gTV-IL-0wX" customClass="ProjectCollectionViewCell" customModule="sampleProject" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="499" height="479"/>
+            <rect key="frame" x="0.0" y="0.0" width="499" height="400"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="499" height="479"/>
+                <rect key="frame" x="0.0" y="0.0" width="499" height="400"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qnX-YK-zZG">
-                        <rect key="frame" x="0.0" y="0.0" width="499" height="479"/>
+                        <rect key="frame" x="0.0" y="0.0" width="499" height="400"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8W3-cy-Ifi">
-                                <rect key="frame" x="490" y="0.0" width="9" height="479"/>
+                                <rect key="frame" x="490" y="0.0" width="9" height="400"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="9" id="ZNp-zg-7RY"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="181398917742695517" translatesAutoresizingMaskIntoConstraints="NO" id="aGQ-KT-EhN">
-                                <rect key="frame" x="0.0" y="0.0" width="499" height="381"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalHuggingPriority="249" image="Cloud" translatesAutoresizingMaskIntoConstraints="NO" id="aGQ-KT-EhN">
+                                <rect key="frame" x="0.0" y="0.0" width="499" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="250" id="h8H-gf-r34"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT6-r8-2PY">
-                                <rect key="frame" x="0.0" y="397" width="499" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VT6-r8-2PY">
+                                <rect key="frame" x="0.0" y="266" width="499" height="73"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTV-MW-ZHW">
-                                <rect key="frame" x="0.0" y="434" width="499" height="3"/>
+                                <rect key="frame" x="0.0" y="355" width="499" height="3"/>
                                 <color key="backgroundColor" systemColor="systemGray6Color"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="3" id="tfK-TU-NA7"/>
@@ -72,11 +75,15 @@
                 <constraint firstItem="qnX-YK-zZG" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vOv-1R-t9D"/>
             </constraints>
             <size key="customSize" width="499" height="297"/>
+            <connections>
+                <outlet property="imageView" destination="aGQ-KT-EhN" id="Ucl-AP-NE3"/>
+                <outlet property="titleLabel" destination="VT6-r8-2PY" id="jGo-Lp-KvI"/>
+            </connections>
             <point key="canvasLocation" x="457.24637681159425" y="171.76339285714286"/>
         </collectionViewCell>
     </objects>
     <resources>
-        <image name="181398917742695517" width="380" height="285"/>
+        <image name="Cloud" width="225" height="225"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

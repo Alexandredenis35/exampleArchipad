@@ -10,6 +10,10 @@ import UIKit
 class ProjectTableViewCell: UITableViewCell {
     @IBOutlet var collectionView: UICollectionView!
     
+    
+    private var viewModel: ProjectViewModel = ProjectViewModel()
+    private var collectionViewCells: [Project] = []
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -31,11 +35,17 @@ class ProjectTableViewCell: UITableViewCell {
         self.collectionView.delegate = self
        
     }
+    
+    public func setup(projects: [Project]) {
+        collectionViewCells = projects
+        self.collectionView.reloadData()
+    }
 }
 
 extension ProjectTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 15
+        print("section => \(section) => \(collectionViewCells.count)")
+        return collectionViewCells.count
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
@@ -44,7 +54,12 @@ extension ProjectTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        print("index => \(indexPath.section)")
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCollectionViewCell", for: indexPath) as? ProjectCollectionViewCell else { return UICollectionViewCell() }
+        let imageName = collectionViewCells[indexPath.row].id
+        let title = collectionViewCells[indexPath.row].name
+        let image: UIImage? = UIImage(named: imageName)
+        cell.setupCell(image: image, title: title)
         return cell
     }
     

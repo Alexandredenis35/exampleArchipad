@@ -10,15 +10,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet private var projectTableView: UITableView!
+    private var viewModel: ProjectViewModel = ProjectViewModel()
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        if let data = JSONHelper.readLocalFile(forName: "projectdata") {
-            JSONHelper.parse(jsonData: data)
-
-        }
-        
-       
         setupTableView()
     }
 
@@ -43,20 +38,24 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return viewModel.tableViewCells.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectTableViewCell") as? ProjectTableViewCell else {
             return UITableViewCell()
     }
+        let projects = viewModel.tableViewCells[indexPath.section].collectionViewCells
+        cell.setup(projects: projects)
         return cell
     }
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let headerView = tableView.dequeueReusableHeaderFooterView(withIdentifier: "ProjectHeaderTableViewCell") as? ProjectHeaderTableViewCell else {
             return UIView()
         }
-    //headerView.sectionTitleLabel.text = "TableView Heder \(section)"
+        
+        let title: String = viewModel.tableViewCells[section].category
+        headerView.setupHeader(title: title)
     return headerView
     }
     

@@ -24,15 +24,16 @@ enum JSONHelper {
         return nil
     }
     
-    public static func parse(jsonData: Data) {
+    public static func parse(jsonData: Data) -> [Project] {
         do {
             let decodedData: ProjectModel = try JSONDecoder().decode(ProjectModel.self,
                                                        from: jsonData)
             
-            print("JSONDATA =>\(decodedData.result)")
+            return decodedData.result
+            
 
         } catch {
-            print("decode \(error)")
+            return []
         }
     }
 }

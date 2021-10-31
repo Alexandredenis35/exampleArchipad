@@ -20,7 +20,7 @@ class ProjectTableViewCell: UITableViewCell {
         
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 200, height: 200)
+        flowLayout.itemSize = CGSize(width: 350, height: 400)
         flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 2, bottom: 10, right: 2)
         flowLayout.minimumInteritemSpacing = 20
         flowLayout.minimumLineSpacing = 20

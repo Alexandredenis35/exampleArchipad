@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="pcy-YS-5Q9">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="landscape" layout="fullscreen" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CFY-IV-XkU">
-                                <rect key="frame" x="0.0" y="70" width="1112" height="764"/>
+                                <rect key="frame" x="0.0" y="20" width="1112" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n3i-da-AFt" userLabel="ContentView">
                                         <rect key="frame" x="0.0" y="0.0" width="1112" height="814"/>
@@ -24,9 +24,6 @@
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="MTZ-lc-P3e">
                                                 <rect key="frame" x="0.0" y="0.0" width="1112" height="814"/>
                                                 <color key="backgroundColor" red="0.98039215690000003" green="0.98039215690000003" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="814" id="ol6-81-m1w"/>
-                                                </constraints>
                                             </tableView>
                                         </subviews>
                                         <constraints>
@@ -40,9 +37,11 @@
                                 <constraints>
                                     <constraint firstItem="n3i-da-AFt" firstAttribute="top" secondItem="sv5-9w-ODt" secondAttribute="top" id="Ac2-BP-rP4"/>
                                     <constraint firstItem="n3i-da-AFt" firstAttribute="leading" secondItem="sv5-9w-ODt" secondAttribute="leading" id="BYc-Q5-yS0"/>
+                                    <constraint firstItem="n3i-da-AFt" firstAttribute="centerY" secondItem="CFY-IV-XkU" secondAttribute="centerY" id="LSk-gg-cEU"/>
                                     <constraint firstItem="n3i-da-AFt" firstAttribute="trailing" secondItem="sv5-9w-ODt" secondAttribute="trailing" id="ZmB-DF-Sv9"/>
                                     <constraint firstItem="n3i-da-AFt" firstAttribute="width" secondItem="Qyd-GX-37d" secondAttribute="width" id="h9A-5M-ZkK"/>
                                     <constraint firstItem="n3i-da-AFt" firstAttribute="bottom" secondItem="sv5-9w-ODt" secondAttribute="bottom" id="hfn-Sn-GTZ"/>
+                                    <constraint firstItem="n3i-da-AFt" firstAttribute="centerX" secondItem="CFY-IV-XkU" secondAttribute="centerX" id="oOj-8O-EOC"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="sv5-9w-ODt"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="Qyd-GX-37d"/>
@@ -57,7 +56,6 @@
                             <constraint firstItem="CFY-IV-XkU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="v1O-f3-mmV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="YRc-k2-IWu"/>
                     <connections>
                         <outlet property="projectTableView" destination="MTZ-lc-P3e" id="3ih-Pe-k58"/>
                     </connections>
@@ -65,24 +63,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="748.92086330935251" y="97.841726618705039"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EpH-Xa-eJQ">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="pcy-YS-5Q9" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="mmc-uz-ZSQ">
-                        <rect key="frame" x="0.0" y="20" width="1112" height="50"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="rhd-ls-9tv"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dJL-Gx-zvs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="34.532374100719423" y="97.841726618705039"/>
         </scene>
     </scenes>
 </document>

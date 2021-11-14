@@ -6,6 +6,7 @@
 //
 
 import Foundation
+
 struct ProjectModel: Decodable {
   let result: [Project]
 }

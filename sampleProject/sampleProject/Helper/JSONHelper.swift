@@ -14,13 +14,11 @@ enum JSONHelper {
             if let bundlePath = Bundle.main.path(forResource: name,
                                                  ofType: "json"),
                 let jsonData = try String(contentsOfFile: bundlePath).data(using: .utf8) {
-                print("JSONDATA => \(jsonData)")
                 return jsonData
             }
         } catch {
             print(error)
         }
-        
         return nil
     }
     

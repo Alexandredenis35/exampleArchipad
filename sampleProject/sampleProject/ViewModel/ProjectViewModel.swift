@@ -16,6 +16,7 @@ class ProjectViewModel {
     }
     
     var tableViewCells: [TableViewCellModel] = []
+    
     init() {
         if let data = JSONHelper.readLocalFile(forName: "projectdata") {
             

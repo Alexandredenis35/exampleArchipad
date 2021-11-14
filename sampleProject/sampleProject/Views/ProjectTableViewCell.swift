@@ -8,34 +8,62 @@
 import UIKit
 
 class ProjectTableViewCell: UITableViewCell {
-    @IBOutlet var collectionView: UICollectionView!
     
+    private enum Constants {
+        static let itemWidthSize: Double = 350
+        static let itemHeightSize: Double = 400
+        static let topInset: Double = 30
+        static let leftInset: Double = 2
+        static let bottomInset: Double = 10
+        static let rightInset: Double = 2
+        static let interItemSpacing: Double = 20
+        static let lineSpacing: Double = 20
+        static let numberOfSections: Int = 1
+        static let cellNibName: String = "ProjectCollectionViewCell"
+    }
+    // MARK: IBOutlets
+
+    @IBOutlet private var collectionView: UICollectionView!
     
+    // MARK: Private properties
+
     private var viewModel: ProjectViewModel = ProjectViewModel()
     private var collectionViewCells: [Project] = []
-    weak var cellDelegate: ProjectCollectionViewCellDelegate?
+    private weak var cellDelegate: ProjectCollectionViewCellDelegate?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         // Register the xib for collection view cell
        
-        let cellNib = UINib(nibName: "ProjectCollectionViewCell", bundle: nil)
-        self.collectionView.register(cellNib, forCellWithReuseIdentifier: "ProjectCollectionViewCell")
-        
-        let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal
-        flowLayout.itemSize = CGSize(width: 350, height: 400)
-        flowLayout.sectionInset = UIEdgeInsets(top: 20, left: 2, bottom: 10, right: 2)
-        flowLayout.minimumInteritemSpacing = 20
-        flowLayout.minimumLineSpacing = 20
-        self.collectionView.collectionViewLayout = flowLayout
-        self.collectionView.showsHorizontalScrollIndicator = false
-        
-        self.collectionView.dataSource = self
-        self.collectionView.delegate = self
-       
+        let cellNib = UINib(nibName: Constants.cellNibName, bundle: nil)
+        self.collectionView.register(cellNib, forCellWithReuseIdentifier: Constants.cellNibName)
+        setupUICell()
     }
     
+    // MARK: Private methods
+
+    private func setupUICell() {
+        let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.itemSize = CGSize(width: Constants.itemWidthSize, height: Constants.itemHeightSize)
+        flowLayout.sectionInset = UIEdgeInsets(top: Constants.topInset,
+                                               left: Constants.leftInset,
+                                               bottom: Constants.bottomInset,
+                                               right: Constants.rightInset)
+        flowLayout.minimumInteritemSpacing = Constants.interItemSpacing
+        flowLayout.minimumLineSpacing = Constants.lineSpacing
+        self.collectionView.collectionViewLayout = flowLayout
+        self.collectionView.showsHorizontalScrollIndicator = false
+        setupDelegate()
+    }
+    
+    private func setupDelegate() {
+        self.collectionView.dataSource = self
+        self.collectionView.delegate = self
+    }
+    
+    // MARK: Public setup
+
     public func setup(delegate: ProjectCollectionViewCellDelegate?,
                       projects: [Project]) {
         cellDelegate = delegate
@@ -44,20 +72,22 @@ class ProjectTableViewCell: UITableViewCell {
     }
 }
 
+// MARK: Extensions
+
 extension ProjectTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("section => \(section) => \(collectionViewCells.count)")
         return collectionViewCells.count
     }
 
     func numberOfSections(in collectionView: UICollectionView) -> Int {
-        return 1
+        return Constants.numberOfSections
     }
     
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        print("index => \(indexPath.section)")
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ProjectCollectionViewCell", for: indexPath) as? ProjectCollectionViewCell else { return UICollectionViewCell() }
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Constants.cellNibName, for: indexPath) as? ProjectCollectionViewCell else {
+            return UICollectionViewCell()
+        }
         let imageName = collectionViewCells[indexPath.row].id
         let title = collectionViewCells[indexPath.row].name
         let timestamp = collectionViewCells[indexPath.row].lastModificationDate
@@ -65,6 +95,4 @@ extension ProjectTableViewCell: UICollectionViewDelegate, UICollectionViewDataSo
         cell.setupCell(delegate: cellDelegate, image: image, title: title, timestamp: timestamp)
         return cell
     }
-    
-    
 }

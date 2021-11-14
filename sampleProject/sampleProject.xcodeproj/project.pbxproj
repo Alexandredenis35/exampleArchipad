@@ -28,7 +28,6 @@
 		5242AFF3272DA3EF003D9C51 /* ProjectModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */; };
 		5242AFF5272E8A5A003D9C51 /* ProjectViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF4272E8A5A003D9C51 /* ProjectViewModel.swift */; };
 		5242AFF8272E8CD5003D9C51 /* TableViewCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5242AFF7272E8CD5003D9C51 /* TableViewCellModel.swift */; };
-		5242AFFC272EA6FF003D9C51 /* Loader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5242AFFB272EA6FF003D9C51 /* Loader.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -74,7 +73,6 @@
 		5242AFF2272DA3EF003D9C51 /* ProjectModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectModel.swift; sourceTree = "<group>"; };
 		5242AFF4272E8A5A003D9C51 /* ProjectViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectViewModel.swift; sourceTree = "<group>"; };
 		5242AFF7272E8CD5003D9C51 /* TableViewCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellModel.swift; sourceTree = "<group>"; };
-		5242AFFB272EA6FF003D9C51 /* Loader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = Loader.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,7 +175,6 @@
 				5242AFE6272CA794003D9C51 /* ProjectTableViewCell.xib */,
 				5242AFE9272D2325003D9C51 /* ProjectHeaderTableViewCell.swift */,
 				5242AFEB272D233A003D9C51 /* ProjectHeaderTableViewCell.xib */,
-				5242AFFB272EA6FF003D9C51 /* Loader.xib */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -304,7 +301,6 @@
 			files = (
 				5242AFE4272CA772003D9C51 /* ProjectCollectionViewCell.xib in Resources */,
 				5242AFBB272CA709003D9C51 /* LaunchScreen.storyboard in Resources */,
-				5242AFFC272EA6FF003D9C51 /* Loader.xib in Resources */,
 				5242AFEC272D233A003D9C51 /* ProjectHeaderTableViewCell.xib in Resources */,
 				5242AFF1272DA261003D9C51 /* projectdata.json in Resources */,
 				5242AFE8272CA794003D9C51 /* ProjectTableViewCell.xib in Resources */,

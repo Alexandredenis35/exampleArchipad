@@ -9,20 +9,23 @@ import UIKit
 
 protocol ProjectCollectionViewCellDelegate: AnyObject {
     func showAlert()
-    func launchSync()
 }
 
 class ProjectCollectionViewCell: UICollectionViewCell {
+   
+    // MARK: IBOutlets
 
     @IBOutlet private var imageView: UIImageView!
     @IBOutlet private var titleLabel: UILabel!
     @IBOutlet private var lastModificationDate: UILabel!
-    weak var cellDelegate: ProjectCollectionViewCellDelegate?
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet private var bottomView: UIView!
     
+    // MARK: Private properties
+
+    private weak var cellDelegate: ProjectCollectionViewCellDelegate?
+    
+    // MARK: Public setup
+
     public func setupCell(delegate: ProjectCollectionViewCellDelegate?,
                           image: UIImage?,
                           title: String,
@@ -31,18 +34,14 @@ class ProjectCollectionViewCell: UICollectionViewCell {
             imageView.image = img
 
         }
-       cellDelegate = delegate
+        cellDelegate = delegate
         lastModificationDate.text = "\(Date(timeIntervalSince1970: timestamp))"
-        print("title => \(title)")
         titleLabel.text = title
     }
     
-    
+    // MARK: IBAction
+
     @IBAction private func cardTouched() {
         cellDelegate?.showAlert()
-    }
-    
-    @IBAction func syncTouched() {
-        
     }
 }
